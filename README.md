@@ -1,6 +1,6 @@
 # Team Portal
 
-This is a simple internal messaging and file sharing system built with PHP and Bootstrap. It is designed for small teams that need to exchange messages and files on a shared hosting environment.
+This is a simple internal messaging and file sharing system built with PHP and Bootstrap. It now ships with a small custom stylesheet that applies a dark "Discord-like" appearance. The system is designed for small teams that need to exchange messages and files on a shared hosting environment.
 
 ## Features
 
@@ -8,6 +8,7 @@ This is a simple internal messaging and file sharing system built with PHP and B
 - Message board visible to all users
 - File upload and download
 - Uses SQLite for storage (single `data.sqlite` file)
+- Dark theme inspired by the Discord interface
 
 ## Setup
 
