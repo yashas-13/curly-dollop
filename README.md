@@ -6,9 +6,11 @@ This is a simple internal messaging and file sharing system built with PHP and B
 
 - User registration and login
 - Message board visible to all users
-- File upload and download
+- File upload and download (up to 1GB per file)
 - Uses SQLite for storage (single `data.sqlite` file)
 - Dark theme inspired by the Discord interface
+- User list so members can see who is online
+- Dashboard shows recent messages and uploaded files
 
 ## Setup
 

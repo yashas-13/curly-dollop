@@ -8,6 +8,9 @@ if (!isset($_SESSION['user_id'])) {
 // Fetch messages
 $messages = $db->query('SELECT messages.content, messages.created_at, users.username FROM messages JOIN users ON messages.user_id = users.id ORDER BY messages.created_at DESC')->fetchAll(PDO::FETCH_ASSOC);
 
+// Fetch list of users for display
+$users = $db->query('SELECT username FROM users ORDER BY username')->fetchAll(PDO::FETCH_ASSOC);
+
 // Fetch files
 $files = $db->query('SELECT files.id, files.filename, files.original_name, files.uploaded_at, users.username FROM files JOIN users ON files.user_id = users.id ORDER BY files.uploaded_at DESC')->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -22,6 +25,18 @@ $files = $db->query('SELECT files.id, files.filename, files.original_name, files
 <body class="container py-5">
 <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
 <a href="logout.php" class="btn btn-secondary mb-3">Logout</a>
+<?php if (!empty($_SESSION['upload_error'])): ?>
+  <div class="alert alert-danger mt-2 mb-2">
+    <?php echo $_SESSION['upload_error']; unset($_SESSION['upload_error']); ?>
+  </div>
+<?php endif; ?>
+
+<h3>Users</h3>
+<ul class="list-group mb-4">
+<?php foreach ($users as $u): ?>
+  <li class="list-group-item"><?php echo htmlspecialchars($u['username']); ?></li>
+<?php endforeach; ?>
+</ul>
 
 <h3>Post a Message</h3>
 <form method="post" action="message.php" class="mb-4">
