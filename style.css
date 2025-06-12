@@ -1,0 +1,25 @@
+body {
+  background-color: #36393f;
+  color: #dcddde;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.btn-primary {
+  background-color: #7289da;
+  border-color: #7289da;
+}
+
+.list-group-item {
+  background-color: #2f3136;
+  border: 1px solid #202225;
+}
+
+.form-control {
+  background-color: #202225;
+  color: #dcddde;
+  border: 1px solid #2f3136;
+}
